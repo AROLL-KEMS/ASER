@@ -1,0 +1,57 @@
+{% extends 'LearnHub/base.html' %}
+{% load static %}
+
+{% block title %}CONADEB-NEWS{% endblock %}
+
+{% block links %}<link rel="stylesheet" type="text/css" href="{% static 'LearnHub/css/contact.css'%}">{% endblock %}
+
+{% block main %}
+    <div class="first">
+        <div class="title">
+            <h1>ASER</h1>
+            <p>EASILY CONTACT US...</p>
+        </div>
+    </div>
+
+    <div class="second">
+        <p>Localisation</p>
+        <span>DOUALA -- NGODI-BAKOKO -- DEUX-CHATEAUX</span><br>
+        <hr>
+        <p>Phone</p>
+        <span>(+237) 699 517 705 / 672 076 809</span><br>
+        <hr>
+        <p>Email</p>
+        <span>arollkems1@gmail.com</span><br>
+    </div>
+
+    <div class="third">
+        <form method="POST">
+            <h3>MAIL US</h3>
+            
+            {% csrf_token %}
+
+            {% if message%}
+                <h4 style="color:green; text-align: center; background-color: pink"><b>{{ message }}4</b></h4>
+            {% endif %}
+
+            <label for="id_name">Name:</label><br>
+            <input type="text" name="name" class="form-control" placeholder="Enter your name(s)" required id="id_name"><br>
+            
+            <label for="id_email">Email:</label><br>
+            <input type="email" name="email" class="form-control" placeholder="name@exemple.com" maxlength="320" required id="id_email"><br>
+            
+            <label for="id_phone">Phone:</label><br>
+            <input type="number" name="phone" class="form-control" placeholder="6 72 07 68 09" required id="id_phone"><br>
+            
+            <label for="id_message">Message:</label><br>
+            <textarea name="message" cols="40" rows="4" class="form-control" placeholder="YOUR MESSAGE" required id="id_message"></textarea><br>
+            
+            <p style="display:none;">
+                <label>Leave this blank:</label>
+                <input type="text" name="honeypot">
+            </p>
+            <button type="submit" class="btn btn-primary">SEND</button>
+        </form>
+    </div>
+{% endblock %}
+

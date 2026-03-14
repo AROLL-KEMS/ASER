@@ -1,0 +1,215 @@
+body, html, footer{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* HEADER START */
+.menu-items {
+    position: sticky;
+    top: 0;
+    left: 0; /* Forces it to the left edge */
+    width: 100vw; /* Occupies full viewport width */
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-evenly;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* background: linear-gradient(to bottom, (#ff9a9e, #fad0c4)); */
+    z-index: 9999; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.menu-items ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-items li, .footer-container li{
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 5px;
+    transition: 1.5s ease-in-out;
+}
+
+.menu-items li:hover,
+.footer-container li:hover{
+    background-color: rgba(247, 170, 5, 0.9);
+    border-radius: 1px;
+}
+
+.menu-items li a, 
+.footer-container li a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.menu-items img{
+    height: 70px;
+    width: auto;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+/* HEADER END */
+
+/* MAIN START */
+.main{
+    margin-top: 0px;
+    padding-top: 0;
+    flex: 1;
+    width: 100%;
+}
+/* MAIN END */
+
+/* PROSPECTUS START */
+.prospectus-section {
+    background: linear-gradient(135deg, #0707c4b2 0%, #c3cfe2 100%);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.prospectus-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.prospectus-content input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.prospectus-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+/* ---ASYNC START--- */
+/* The Spinner Animation */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff; /* The "moving" part of the circle */
+    display: inline-block;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Optional: Make button look disabled while loading */
+.btn-loading {
+    background-color: #6c757d !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+/* ---ASYNC END--- */
+
+.prospectus-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.download-link {
+    background-color: #28a745; /* Green for success */
+    display: inline-block;
+}
+/* PROSPECTUS END */
+
+/* FOOTER START */
+footer{
+    margin-bottom: 0;
+    background: url(../img/stud1.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container{
+    position: relative;
+    flex-direction: row;
+    z-index: 1000;
+    top: -1;
+    left: -1;
+    margin: 0;
+    min-height: 50px;
+    padding: 20px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.footer-container ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.footer-container p{
+    text-align: center;
+    color: rgb(222, 247, 5);
+}
+
+
+.footer-container p a{
+    text-decoration: none;
+    color: rgb(238, 165, 8);
+} 
+
+/* FOOTER END */
+
+
+@media (max-width: 900px) {
+    .footer-container ul{
+        display: block;
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .footer-container li,
+    .menu-items li{
+        margin: 10px;
+    }
+
+    .menu-items ul{
+        display: block;
+    }
+}
+
+@media (max-width: 480px){
+    .menu-items ul{
+        display: block;
+        justify-content: flex-start;
+        margin: 0 0 0 -50px;
+    }
+}

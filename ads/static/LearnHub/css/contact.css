@@ -1,0 +1,107 @@
+.first{
+    text-align: center;
+    /* align-items: center; */
+    min-height: 300px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.title{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url(../img/stud1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(6, 20, 226, 0.25);
+    margin: 0;
+    padding: 180px;
+}
+
+/* @media (max-width: 768px) {
+    .first {
+        min-height: 250px; 
+        background-attachment: scroll; 
+    }
+} */
+
+.second{
+    background-color: rgba(29, 109, 207, 0.8);
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    border-radius: 20px;
+    color:whitesmoke;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+}
+
+.second p{
+    font-size: 25px;
+    color: rgb(233, 177, 73);
+    text-transform: uppercase;
+}
+
+.second span{
+    margin-bottom: 30px;
+}
+
+.third{
+    background-color: rgb(174, 206, 235);
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 17px;
+}
+
+.third form{
+    background-color: rgb(103, 180, 248);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5)
+}
+
+.third input,
+.third textarea
+,.third button
+{
+    height: 35px;
+    width: 90%;
+    max-width: 400px !important;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px rgba(252, 164, 2, 0.911);
+    letter-spacing: 1.5px;
+}
+
+.third textarea{
+    min-height: 100px;
+}
+
+.third button{
+    /* height: 35px;
+    width: 150px; */
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+    background-color: rgba(252, 164, 2, 0.911);
+    border-radius: 10px;
+    transition: 1.5s;
+}
+
+.third button:hover{
+    background-color: whitesmoke;
+    border: 2px solid rgba(252, 164, 2, 0.911);
+    transform: translateY(-4px);
+}

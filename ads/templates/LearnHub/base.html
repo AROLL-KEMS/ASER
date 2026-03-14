@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CONADEB BASE LAYOUT{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'LearnHub/css/base_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'LearnHub/css/toTop.css' %}">
+    {% block links %}{% endblock %}
+</head>
+<body>
+    {% comment %} HEADER START {% endcomment %}
+        <nav class="menu-items">
+            <img src="{% static 'LearnHub/img/ASER.jpg'%}?v = {{ timestamp }}" alt="LOGO">
+            <ul>
+                <li><a href="{% url 'test' %}">HOME</a></li>
+                <li><a href="{% url 'events' %}">EVENTS</a></li>
+                <li><a href="{% url 'contact' %}">CONTACTS</a></li>
+            </ul>
+        </nav>
+    {% comment %} HEADER END {% endcomment %}
+
+    {% comment %} MAIN CONTENT START {% endcomment %}
+        <main class="main">
+            {% block main %}
+    
+            {% endblock %}
+        </main>    
+    {% comment %} MAIN CONTENT END {% endcomment %}
+     
+    {% comment %} PROSPECTUS START {% endcomment %}
+
+        <div class="prospectus-section">
+            <div id="form-container">
+                <h2>Download Our Prospectus</h2>
+                <p>Enter your details to get instant access to our 2026 course guide.</p>
+                
+                <form id="prospectus-form" class="prospectus-content">
+                    {% csrf_token %}
+                    <input type="text" name="name" id="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <button type="submit" id="submit-btn" class="prospectus-button">
+                    <span id="btn-text">Submit & Unlock Download</span>
+                    <span id="btn-spinner" class="spinner" style="display: none;"></span>
+                </button>
+                </form>
+            </div>
+
+            <div id="download-container" style="display: none;">
+                <h2>Thank you, <span id="username"></span>!</h2>
+                <p>Your download is ready below.</p>
+                <a href="{% static 'LearnHub/img/prospectus.pdf' %}" class="prospectus-button download-link" download>
+                    Click here to Download PDF
+                </a>
+            </div>
+        </div>
+
+    {% comment %} PROSPECTUS END {% endcomment %}
+    
+    {% comment %} SCROLL TO TOP START {% endcomment %}
+        <button type="button" id="btn-back-to-top" aria-label="Back to top">
+            ↑
+        </button>
+    {% comment %} SCROLL TO TOP END {% endcomment %}
+
+    {% comment %} FOOTER START {% endcomment %}
+        <footer>
+            <div class="footer-container">
+                <ul>
+                    <li><a href="{% url 'test' %}">HOME</a></li>
+                    <li><a href="{% url 'events' %}">EVENTS</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACTS</a></li>
+                </ul>
+                <p>Copyright © ASER 2026. All rights reserved | Design by <a class="producer" href="https://wa.me/237699517705">arollkems1@gmail.com</a></p>
+            </div>
+        </footer>
+    {% comment %} FOOTER START {% endcomment %}
+    
+    <script>
+    document.getElementById('prospectus-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const btn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const spinner = document.getElementById('btn-spinner');
+        let  name = document.getElementById('name').innerText;
+        
+        btnText.innerText = "Processing...";
+        spinner.style.display = "inline-block";
+        btn.classList.add('btn-loading');
+
+        setTimeout(() => {
+            const formContainer = document.getElementById('form-container');
+            const downloadContainer = document.getElementById('download-container');
+
+            formContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                formContainer.style.display = 'none';
+                downloadContainer.style.display = 'block';
+                document.getElementById('username').innerText = name;
+                downloadContainer.style.opacity = '1';
+            }, 500);
+        }, 2000);
+    });
+    </script>
+    <script src="{% static 'LearnHub/js/toTop.js' %}"></script>
+</body>
+</html>

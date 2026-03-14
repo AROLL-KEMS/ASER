@@ -1,0 +1,129 @@
+{% extends 'LearnHub/base.html' %}
+{% load static %}
+
+{% block title %}WELCOME - ASER{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'LearnHub/css/home.css'%}?v = {{ timestamp }}">
+{% endblock %}
+
+{% block main %}
+<div class="first">
+    <div class="video-player">
+        <video autoplay muted loop playsinline class="back-video">
+            <source src="{% static 'LearnHub/img/DADJU_TAYC.mp4' %}" type="video/mp4">
+            ERROR loading this content
+        </video>
+        <div class="video-content">
+            <h1>Advanced Training Programs</h1>
+            <p>Empowering the next generation of experts.</p>
+            <button class="btn">Explore Courses</button>
+        </div>
+    </div>
+</div>
+
+<div class="second">
+    <p>
+        <h3><b>Join ASER Training Center: Where Innovation Meets Excellence!</b></h3><br />
+        <span>
+            At ASER, we prepare the leaders of tomorrow through forward-thinking 
+            training programs and cutting-edge technologies. From engineering and 
+            information technology to management and applied sciences, we offer a 
+            dynamic learning environment focused on the future. By combining expert 
+            instruction, hands-on projects, and industry-based internships, we equip 
+            our learners with the skills needed to thrive in a constantly evolving 
+            world. Join the innovation, strengthen your capabilities, and become a 
+            key agent of change.
+        </span>
+    </p>
+</div>
+
+<div class="third">
+    <h2>OUR TRAINING DOMAINS</h2>
+    <section class="training-section">
+        <div class="training-card">
+            <img src="{% static 'LearnHub/img/stud1.jpg' %}" alt="Web Development">
+            <div class="card-content">
+                <h3>Web Development</h3>
+                <p>Build modern and responsive websites and applications.</p>
+                <a href="#" class="card-button">Learn More</a>
+            </div>
+        </div>
+
+        <div class="training-card">
+            <img src="{% static 'LearnHub/img/stud1.jpg' %}" alt="Data Science">
+            <div class="card-content">
+                <h3>Data Science</h3>
+                <p>Learn data analysis, machine learning, and visualization.</p>
+                <a href="#" class="card-button">Learn More</a>
+            </div>
+        </div>
+
+        <div class="training-card">
+            <img src="{% static 'LearnHub/img/stud1.jpg' %}" alt="Cybersecurity">
+            <div class="card-content">
+                <h3>Cybersecurity</h3>
+                <p>Protect systems, networks, and digital infrastructures.</p>
+                <a href="#" class="card-button">Learn More</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="fourth">
+    <h3>
+        REGISTER NOW TO BEGIN AN EXPERTISE TRAINING
+        AND BECOME A TOMORROW'S LEADER
+    </h3>
+    <button class="card-button">
+        <img src="{% static 'LearnHub/img/stud1.jpg' %}" alt="" class="small">
+        <span>REGISTER</span>
+    </button>
+</div>
+
+<div class="fifth">
+    <h2>OUR ACTUAL STATISTICS</h2>
+    <div class="stat-container">
+        <div class="stat-items">
+            <i></i>
+            <span>
+                <p><b>PROFESSIONAL INTEGRATION</b></p>
+                <span class="stat-detail">
+                    100%
+                </span>
+            </span>
+        </div>
+
+        <div class="stat-items">
+            <i></i>
+            <span>
+                <p><b>SUCCESS RATE</b></p>
+                <span class="stat-detail">
+                    100%
+                </span>
+            </span>
+        </div>
+
+        <div class="stat-items">
+            <i></i>
+            <span>
+                <p><b>TRAINEES</b></p>
+                <span class="stat-detail">
+                    100 +
+                </span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="sixth">
+    <div class="title"><h2>ASER IN IMAGES</h2></div>
+    <div class="img-container">
+        <img src="{% static 'LearnHub/img/stud1.jpg' %}" alt="Cybersecurity" title="IMAGE">
+        <img src="{% static 'LearnHub/img/stud1.jpg' %}" alt="Cybersecurity">
+        <img src="{% static 'LearnHub/img/stud1.jpg' %}" alt="Cybersecurity">
+        <img src="{% static 'LearnHub/img/stud1.jpg' %}" alt="Cybersecurity">
+    </div>
+</div>
+
+{% endblock %}
+

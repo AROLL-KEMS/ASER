@@ -1,0 +1,161 @@
+/* Base Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.registration-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 550px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #1f2937;
+    font-size: 1.8rem;
+}
+
+/* Avatar Preview */
+.avatar-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#imagePreview {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #e5e7eb;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f9fafb;
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+#imagePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom-file-upload {
+    cursor: pointer;
+    background: #f3f4f6;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.custom-file-upload:hover { background: #e5e7eb; }
+input[type="file"]#avatarInput { display: none; }
+
+/* Grid & Inputs */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.full-width { grid-column: span 2; }
+
+.field-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+textarea { resize: vertical; font-family: inherit; }
+
+/* Radio Buttons */
+.gender-radio-group {
+    background: #f9fafb;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Document Upload Card */
+.file-upload-card {
+    background: #eff6ff;
+    border: 1px dashed #3b82f6;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.file-hint {
+    font-size: 0.75rem;
+    color: #60a5fa;
+    margin: 5px 0 0;
+}
+
+/* Messages */
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+.alert-error { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+.alert-success { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+
+/* Actions */
+hr { border: 0; border-top: 1px solid #f3f4f6; margin: 25px 0; }
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.submit-btn:hover { background: #1d4ed8; }
+.submit-btn:active { transform: scale(0.98); }
+
+.form-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.form-footer a { color: #2563eb; text-decoration: none; font-weight: 600; }

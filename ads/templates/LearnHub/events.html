@@ -1,0 +1,36 @@
+{% extends 'LearnHub/base.html' %}
+{% load static %}
+
+{% block title %}ASER -- EVENTS{% endblock %}
+
+{% block links %}<link rel="stylesheet" type="text/css" href="{% static 'LearnHub/css/events.css'%}">{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="holder">
+            <div class="card">
+                <img src="{% static 'LearnHub/img/web_sockets.jpg' %}" alt="Card Image">
+                <div class="overlay">
+                    <h3>Card Title</h3>
+                    <p>This text appears on hover</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'LearnHub/img/web_sockets.jpg' %}" alt="Card Image">
+                <div class="overlay">
+                    <h3>Card Title</h3>
+                    <p>This text appears on hover</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="{% static 'LearnHub/img/web_sockets.jpg' %}" alt="Card Image">
+                <div class="overlay">
+                    <h3>Card Title</h3>
+                    <p>This text appears on hover</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
